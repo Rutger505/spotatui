@@ -17,6 +17,7 @@
 
 ### Fixed
 
+- **The playbar cover fills the playbar at size 200**: the cover slot assumed every terminal cell is 1.9 times as tall as it is wide, so with taller cells (Ghostty's 6x15 px, ratio 2.5) the cover was fitted to the slot's width and stayed at about 76% of the playbar height, with gaps above and below. The slot now uses the cell size the terminal reports at startup and keeps 1.9 for halfblocks or when no size was measured.
 - Playlist pin changes keep the selected playlist in the terminal sidebar. Failed additions can be retried, pin write errors use the normal error screen, and refreshes keep pins for followed playlists omitted from the rootlist.
 - **`playback --help` names every option**: the list of options that can be used together now includes `--dislike` and `--seek`, says that `--like` and `--dislike` exclude each other, says that `--next` and `--previous` work with `--seek`, and says that `--share-track` and `--share-album` ignore `--seek` ([#1045](https://github.com/LargeModGames/spotatui/issues/1045)).
 - **`spotatui plugin update` exits non-zero when an update fails**: a plugin whose git fetch or reset failed was reported on stdout and the command still exited 0, also when updating one plugin by name. Each failure now goes to stderr, the lockfile still records the plugins that did update, and the command ends with "N plugin(s) failed to update" and a non-zero exit ([#1047](https://github.com/LargeModGames/spotatui/issues/1047)).
