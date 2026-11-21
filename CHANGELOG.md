@@ -4,6 +4,7 @@
 
 ### Added
 
+- **Open the now playing panel at startup**: set `behavior.now_playing_panel_on_startup: true` in `config.yml` and the terminal app starts with the now playing panel (cover, details and up next) open, as if you had pressed `Enter` on the playbar. It is off by default, and `Enter` on the playbar still closes it.
 - **Pin playlists in your library**: press `t` on a Spotify sidebar playlist, or choose Pin to top in the GUI's Your Library menu. Pins are saved on this computer and stay below the community playlist, in pin order, ahead of folders and the chosen sidebar sort. A complete refresh removes missing pins only for the account that created them. The new default key reserves `t` from plugin commands; rebind `pin_playlist` to keep an existing plugin on `t` ([#863](https://github.com/LargeModGames/spotatui/issues/863)).
 - **A recap of the year in December**: from 1 December the terminal app offers the recap of the whole year once, in the popup that offers the monthly recap. The year popup also counts as that month's, and `enable_monthly_recap_prompt: false` turns both off. `spotatui history recap --period year` makes the same recap on any day.
 - **The recap popup in the desktop app and the browser GUI**: when the monthly recap or the December recap of the year is ready, the GUI now shows it in a dialog with Open, Later and Don't show this again. Before, only the terminal app showed the popup.
